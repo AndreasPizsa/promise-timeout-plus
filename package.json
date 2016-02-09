@@ -1,0 +1,39 @@
+{
+  "name": "promise-timeout-plus",
+  "description": "Promise.timeout() for ES6; reject a Promise after a given timeout.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/AndreasPizsa/promise-timeout-plus",
+  "author": "Andreas Pizsa (https://github.com/AndreasPizsa)",
+  "repository": "AndreasPizsa/promise-timeout-plus",
+  "bugs": {
+    "url": "https://github.com/AndreasPizsa/promise-timeout-plus/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.2",
+    "mocha": "*",
+    "mocha-lcov-reporter": "^1.0.0",
+    "should": "*"
+  },
+  "keywords": [
+    "es6",
+    "promises",
+    "promise.timeout",
+    "timeout"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
