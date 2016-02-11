@@ -1,7 +1,7 @@
 {
   "name": "promise-timeout-plus",
   "description": "Promise.timeout() for ES6; reject a Promise after a given timeout.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/AndreasPizsa/promise-timeout-plus",
   "author": "Andreas Pizsa (https://github.com/AndreasPizsa)",
   "repository": "AndreasPizsa/promise-timeout-plus",
