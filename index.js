@@ -7,26 +7,23 @@
 
 'use strict';
 
-const globals = global; typeof window !== 'undefined' ? window : global;
+const globals =   typeof window !== 'undefined' ? window
+                : typeof global !== 'undefined' ? global
+                : typeof self   !== 'undefined' ? self
+                : undefined;
 
-module.exports = function (PromiseLib) {
+module.exports = function (PromiseLib, overwriteExistingFunction) {
   PromiseLib = PromiseLib || Promise;
 
-  const prototype = PromiseLib.resolve(true).constructor.prototype;
-  if(prototype.timeout) return;
+  const prototype = require('promise-prototype')(PromiseLib);
+  if(prototype.timeout && !overwriteExistingFunction) return;
 
   prototype.timeout = function(ms, messageOrError) {
     const originalPromise = this;
 
     return new Promise( function(resolve,reject) {
-
-      var timerId = globals.setTimeout(function(){
-        timerId = undefined;
-        reject(messageOrError);
-      },ms);
-
+      globals.setTimeout(reject.bind(this,messageOrError),ms);
       originalPromise.then(resolve,reject);
-
     });
   }
 };
