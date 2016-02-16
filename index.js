@@ -7,10 +7,7 @@
 
 'use strict';
 
-const globals =   typeof window !== 'undefined' ? window
-                : typeof global !== 'undefined' ? global
-                : typeof self   !== 'undefined' ? self
-                : undefined;
+var globals = require('global-var');
 
 module.exports = function (PromiseLib, overwriteExistingFunction) {
   PromiseLib = PromiseLib || Promise;
@@ -19,7 +16,7 @@ module.exports = function (PromiseLib, overwriteExistingFunction) {
   if(prototype.timeout && !overwriteExistingFunction) return;
 
   prototype.timeout = function(ms, messageOrError) {
-    const originalPromise = this;
+    var originalPromise = this;
 
     return new Promise( function(resolve,reject) {
       globals.setTimeout(reject.bind(this,messageOrError),ms);
