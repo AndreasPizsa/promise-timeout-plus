@@ -1,5 +1,7 @@
 # promise-timeout-plus ![Travis](https://img.shields.io/travis/AndreasPizsa/promise-timeout-plus.svg?style=flat-square) ![Coverage Status](https://img.shields.io/coveralls/AndreasPizsa/promise-timeout-plus.svg?style=flat-square) ![Downloads](https://img.shields.io/npm/dm/promise-timeout-plus.svg?style=flat-square)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AndreasPizsa/promise-timeout-plus.svg)](https://greenkeeper.io/)
+
 > Promise.timeout() for ES6; reject a Promise after a given timeout.
 
 ## Install
